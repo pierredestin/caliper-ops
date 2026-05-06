@@ -222,7 +222,7 @@ const KpiCard = ({ label, value, unit, sub, trend, status, icon: Icon }) => {
       position: 'relative',
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-        <span style={{ fontSize: 10, letterSpacing: '0.12em', color: COLOR.dim, textTransform: 'uppercase', fontFamily: 'ui-monospace, "JetBrains Mono", "SF Mono", monospace' }}>{label}</span>
+        <span style={{ fontSize: 10, letterSpacing: '0.12em', color: COLOR.dim, textTransform: 'uppercase', fontFamily: 'ui-monospace, "JetBrains Mono", "SF Mono", monospace', fontWeight: 900, color: COLOR.text }}>{label}</span>
         {Icon && <Icon size={14} color={COLOR.dim} />}
       </div>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>

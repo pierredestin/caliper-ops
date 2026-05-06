@@ -229,13 +229,15 @@ const KpiCard = ({ label, value, unit, sub, trend, status, icon: Icon }) => {
         <span style={{ fontSize: 32, fontWeight: 600, color: COLOR.text, fontFamily: 'ui-monospace, "JetBrains Mono", monospace', letterSpacing: '-0.02em' }}>{value}</span>
         {unit && <span style={{ fontSize: 13, color: COLOR.dim, fontFamily: 'ui-monospace, monospace' }}>{unit}</span>}
       </div>
-      {sub && <div style={{ fontSize: 11, color: COLOR.dim, marginTop: 4, fontFamily: 'ui-monospace, monospace' }}>{sub}</div>}
-      {trend !== undefined && (
-        <div style={{ position: 'absolute', top: 14, right: 14, display: 'flex', alignItems: 'center', gap: 3, fontSize: 11, color: trend >= 0 ? COLOR.green : COLOR.red, fontFamily: 'ui-monospace, monospace' }}>
-          {trend >= 0 ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
-          {trend >= 0 ? '+' : ''}{trend.toFixed(1)}%
-        </div>
-      )}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 4 }}>
+        {sub && <div style={{ fontSize: 11, color: COLOR.dim, fontFamily: 'ui-monospace, monospace' }}>{sub}</div>}
+        {trend !== undefined && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: 3, fontSize: 11, color: trend >= 0 ? COLOR.green : COLOR.red, fontFamily: 'ui-monospace, monospace', flexShrink: 0, marginLeft: 8 }}>
+            {trend >= 0 ? <TrendingUp size={11} /> : <TrendingDown size={11} />}
+            {trend >= 0 ? '+' : ''}{trend.toFixed(1)}%
+          </div>
+        )}
+      </div>
     </div>
   );
 };
